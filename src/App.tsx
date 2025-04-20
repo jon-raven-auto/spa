@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import ReactLogo from './assets/react.svg?react'
+import ViteLogo from './assets/vite.svg?react'
 import './App.css'
 import { MemoryRouter, Routes, Route, Link } from 'react-router-dom';
 
@@ -23,10 +23,10 @@ function App() {
 
         <div>
           <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
+            <ViteLogo />
           </a>
           <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
+            <ReactLogo />
           </a>
         </div>
         <h1>Vite + React</h1>
