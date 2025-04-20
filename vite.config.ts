@@ -4,5 +4,9 @@ import { viteSingleFile } from "vite-plugin-singlefile"
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), viteSingleFile({ removeViteModuleLoader: true })],
+  plugins: [react(), viteSingleFile()],
+  base: '/s/spa/', // Match Rewst's path
+  build: {
+    assetsDir: '.' // Flat structure
+  }
 })
