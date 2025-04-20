@@ -3,6 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+try {
+  new URL(window.location.href)
+} catch (error) {
+  console.error('Invalid URL:', error)
+  window.location.href = '/'
+}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
