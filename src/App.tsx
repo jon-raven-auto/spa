@@ -1,20 +1,33 @@
-// src/components/App.tsx
-import { HashRouter, Routes, Route, Link } from 'react-router-dom'
-import HomePage from './HomePage'
-import AboutPage from './AboutPage'
+import './App.css'
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { Sidebar } from './components';
+import Home from './routes/Home';
+import About from './routes/About';
+
+function App() {
+  const pageNames = ["Home", "About"];
 
 export default function App() {
   return (
-    <HashRouter>
-      <nav>
-        <Link to="/home">Home</Link>
-        <Link to="/about">About</Link>
-      </nav>
-
-      <Routes>
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
-    </HashRouter>
+    <>
+      <MemoryRouter initialEntries={["/home"]}>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3">
+              <Sidebar pageNames={pageNames} />
+            </div>
+            <div className="col-md-8">
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/about" element={<About />} />
+              </Routes>
+            </div>
+          </div>
+        </div>
+      </MemoryRouter>
+    </>
   )
 }
+
+
+export default App
